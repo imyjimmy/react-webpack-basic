@@ -1,0 +1,72 @@
+{
+  "name": "react-webpack-basic",
+  "version": "0.0.1",
+  "description": "a react webpack bare bones template",
+  "main": "index.js",
+  "author": "Jimmy Fan Zhang",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^9.0.0",
+    "babel-preset-nano-react-app": "^0.1.0",
+    "css-loader": "^3.1.0",
+    "dotenv": "^8.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-flowtype": "^3.9.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "1.18.2",
+    "react-json-tree": "0.11.0",
+    "react-table": "7.0.0-alpha.2",
+    "react-window": "latest",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-conditional-loader": "^1.0.12",
+    "webpack-dev-server": "^3.4.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "scripts": {
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "dev": "webpack-dev-server --env.mode development --config webpack.dev.js",
+    "build": "webpack --env.mode production --config webpack.prod.js",
+    "clean": "rm -rf build",
+    "format": "find src \\( -name '*.js' -or -name '*.jsx' \\) -exec yarn prettier --write {} +"
+  },
+  "babel": {
+    "presets": [
+      "nano-react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ],
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragmaFrag": "React.Fragment"
+        }
+      ]
+    ]
+  }
+}
